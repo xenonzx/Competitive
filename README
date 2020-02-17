@@ -1,1 +1,3 @@
 Problem Name :
+
+to execute :clang++ solution.cpp  && ./a.out && echo
