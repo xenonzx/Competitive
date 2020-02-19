@@ -4,17 +4,21 @@
 using namespace std;
 
 int main(){
-    char str1[20];
-    int n;
-    int * dynamicArray;
-    map <int, int> hash;
+    char s[51];
+    char t[51];
+    
+    scanf("%s", s);
+    scanf("%s", t);
 
-    cin>> n;
-    dynamicArray = new int[n] ;
+    int sPos = 0;
+    int tPos = 0;
 
-   printf("Enter name: ");
-   scanf("%s", str1);
-   printf("Entered Name: %s\n", str1);
-   
+    while( sPos < strlen(s) &&tPos<strlen(t)){
+        if (s[sPos]== t[tPos]){
+            sPos++;
+        }
+        tPos++;
+    }
+    cout<<sPos+1;
     return 0;
 }
