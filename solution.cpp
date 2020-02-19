@@ -1,18 +1,27 @@
 #include <iostream>
-
+#include <map>
 using namespace std;
 
 int main(){
-    char str1[20], str2[30];
+    int n;
+    int * awayArray;
+    map <int, int> homeCount;
 
-   printf("Enter name: ");
-   scanf("%s", str1);
+    cin>> n;
+    awayArray = new int[n] ;
+    for (int i = 0; i < n; i++)
+    {   int home;
+        int away;
+        cin >> home >> away;
+        homeCount[home]++;
+        awayArray[i] = away; 
+    }
 
-   printf("Enter your website name: ");
-   scanf("%s", str2);
-
-   printf("Entered Name: %s\n", str1);
-   printf("Entered Website:%s", str2);
-   
+    int conflictingGames = 0;
+    for (int i = 0; i < n; i++){
+       conflictingGames += homeCount[awayArray[i]] ;
+    }
+    cout<<conflictingGames;
+    
     return 0;
 }
